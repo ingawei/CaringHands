@@ -1,14 +1,12 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
-// !STARTERCONF Change these default meta
 const defaultMeta = {
-  title: 'Next.js + Tailwind CSS + TypeScript Starter',
-  siteName: 'Next.js + Tailwind CSS + TypeScript Starter',
+  title: 'Caring Hands of Hope Uganda',
+  siteName: 'Caring Hands of Hope Uganda',
   description:
-    'A starter for Next.js, Tailwind CSS, and TypeScript with Absolute Import, Seo, Link component, pre-configured with Husky',
-  /** Without additional '/' on the end, e.g. https://theodorusclarence.com */
-  url: 'https://tsnext-tw.thcl.dev',
+    'Caring Hands of Hope has designed programs and campaigns tailored to promote health, education, vocational and life skills training, social behavior change and leadership development among girls and young women. Our programs are engaging and create a long-lasting impact on the lives of young women and enable them fulfill their potential.',
+  url: 'https://caringhandsofhopeug.org',
   type: 'website',
   robots: 'follow, index',
   /**

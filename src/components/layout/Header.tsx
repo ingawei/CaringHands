@@ -1,31 +1,57 @@
 import * as React from 'react';
 
-import UnstyledLink from '@/components/links/UnstyledLink';
+import { Row } from '@/components/layout/Row';
+import ButtonLink from '@/components/links/ButtonLink';
+import { useRouter } from 'next/router';
+import clsx from 'clsx';
 
-const links = [
-  { href: '/', label: 'Route 1' },
-  { href: '/', label: 'Route 2' },
-];
+function isCurrentPage(currPath: string, linkPath: string) {
+  return currPath === linkPath;
+}
+
+const CURRENT_PAGE_STYLE = 'text-orange underline';
+
+const ABOUT_US = '/about-us';
+const RESOURCES = '/resources';
+const THE_TEAM = '/the-team';
 
 export default function Header() {
+  const router = useRouter();
+  console.log(isCurrentPage(ABOUT_US, router.pathname));
   return (
-    <header className='sticky top-0 z-50 bg-white'>
-      <div className='layout flex h-14 items-center justify-between'>
-        <UnstyledLink href='/' className='font-bold hover:text-gray-600'>
-          Home
-        </UnstyledLink>
-        <nav>
-          <ul className='flex items-center justify-between space-x-4'>
-            {links.map(({ href, label }) => (
-              <li key={`${href}${label}`}>
-                <UnstyledLink href={href} className='hover:text-gray-600'>
-                  {label}
-                </UnstyledLink>
-              </li>
-            ))}
-          </ul>
-        </nav>
+    <header className='sticky top-0 z-50 w-full bg-inherit'>
+      <div className='w-full pt-4 text-center text-lg font-bold text-white md:pt-6 md:text-2xl'>
+        CARING HANDS OF HOPE UGANDA
       </div>
+      <Row className='mx-auto mt-2 place-content-center gap-8 bg-inherit pb-2 font-medium'>
+        <ButtonLink
+          href={ABOUT_US}
+          variant='light'
+          className={clsx(
+            isCurrentPage(router.pathname, ABOUT_US) ? CURRENT_PAGE_STYLE : ''
+          )}
+        >
+          About Us
+        </ButtonLink>
+        <ButtonLink
+          href={RESOURCES}
+          variant='light'
+          className={clsx(
+            isCurrentPage(router.pathname, RESOURCES) ? CURRENT_PAGE_STYLE : ''
+          )}
+        >
+          Resources
+        </ButtonLink>
+        <ButtonLink
+          href={THE_TEAM}
+          variant='light'
+          className={clsx(
+            isCurrentPage(router.pathname, THE_TEAM) ? CURRENT_PAGE_STYLE : ''
+          )}
+        >
+          The Team
+        </ButtonLink>
+      </Row>
     </header>
   );
 }

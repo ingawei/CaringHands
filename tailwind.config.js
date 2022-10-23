@@ -7,9 +7,14 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        primary: ['Inter', ...fontFamily.sans],
+        primary: ['Avenir', ...fontFamily.sans],
       },
       colors: {
+        'purple-background':'#35142C',
+        'orange':'#F68930',
+        'pink':'#EA8494',
+        'teal':'#99CCC8',
+        'purple':'#9C7687',
         primary: {
           // Customize it on globals.css :root
           50: 'rgb(var(--tw-color-primary-50) / <alpha-value>)',
