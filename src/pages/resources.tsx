@@ -1,7 +1,5 @@
 import * as React from 'react';
-
 import Layout from '@/components/layout/Layout';
-import Seo from '@/components/Seo';
 
 /**
  * SVGR Support
@@ -10,10 +8,12 @@ import Seo from '@/components/Seo';
  * You can override the next-env if the type is important to you
  * @see https://stackoverflow.com/questions/68103844/how-to-override-next-js-svg-module-declaration
  */
-export default function HomePage() {
+import { Title } from '@/components/layout/Title';
+
+export default function AboutUs() {
   return (
     <Layout>
-      <Seo />
+      <Title text='hi' color='pink'></Title>
     </Layout>
   );
 }

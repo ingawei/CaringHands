@@ -1,5 +1,13 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
+  async redirects() {
+    return [
+      {source:'/',
+      destination: '/about-us',
+      permanent: true,
+    }
+    ]
+  },
   eslint: {
     dirs: ['src'],
   },
